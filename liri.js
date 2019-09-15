@@ -100,7 +100,7 @@ function showSongInfo(musicSearch) {
             console.log("-----------------------");
             fs.appendFileSync("log.txt", "-----------------------\n");
             console.log("If you haven't watched 'Fantastic Mr. Fox,' then you should: https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1?ref_=nv_sr_1");
-            fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1?ref_=nv_sr_1" + "\n");
+            fs.appendFileSync("log.txt", "If you haven't watched 'Fantastic Mr. Fox,' then you should: https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1?ref_=nv_sr_1" + "\n");
         }
         var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=32ac2fdb";
         request(queryUrl, function (error, response, body) {
