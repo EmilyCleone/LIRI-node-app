@@ -62,7 +62,7 @@ function showConcertInfo(input) {
 ////////////////////////////music///////////////////////////////////////////
 function showSongInfo(musicSearch) {
     if (musicSearch === undefined || null) {
-        musicSearch = "The Sign"; //default Song
+        musicSearch = "You can't always get what you want"; //default Song
     }
     spotify.search({
             type: "track",
@@ -96,17 +96,16 @@ function showSongInfo(musicSearch) {
     //Funtion for Movie Info: OMDB
     function showMovieInfo(input) {
         if (input === undefined) {
-            input = "Mr. Nobody"
+            input = "Fantastic Mr. Fox"
             console.log("-----------------------");
             fs.appendFileSync("log.txt", "-----------------------\n");
-            console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-            fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" + "\n");
-            console.log("It's on Netflix!");
-            fs.appendFileSync("log.txt", "It's on Netflix!\n");
+            console.log("If you haven't watched 'Fantastic Mr. Fox,' then you should: https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1?ref_=nv_sr_1");
+            fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1?ref_=nv_sr_1" + "\n");
         }
-        var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=b3c0b435";
+        var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=32ac2fdb";
         request(queryUrl, function (error, response, body) {
             // If the request is successful
+            //appends data to log.text
             if (!error && response.statusCode === 200) {
                 var movies = JSON.parse(body);
                 console.log("MOVIE INFO");
